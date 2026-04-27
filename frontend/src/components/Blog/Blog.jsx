@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './Blog.module.css';
 import { blogsData } from '../../data';
@@ -14,13 +15,11 @@ const Blog = () => {
             blogs.map((blog, index) => (
               <article key={index} className={styles.blogCard}>
                 <div className={styles.blogMeta}>
-                  <span>{new Date(blog.date).toLocaleDateString()}</span>
-                  <span>•</span>
                   <span>{blog.readTime}</span>
                 </div>
                 <h3 className={styles.blogTitle}>{blog.title}</h3>
                 <p className={styles.blogContent}>{blog.content}</p>
-                <a href="#" className={styles.readMore}>Read Article &rarr;</a>
+                <Link to={`/blog/${blog.id}`} className={styles.readMore}>Read Article &rarr;</Link>
               </article>
             ))
           ) : (
@@ -31,5 +30,6 @@ const Blog = () => {
     </section>
   );
 };
+
 
 export default Blog;

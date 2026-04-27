@@ -9,7 +9,7 @@ const Navbar = () => {
     <header className={styles.header}>
       <nav className={`container ${styles.nav}`}>
         <div className={styles.logo}>
-          <a href="#">Viral<span>.</span></a>
+          <a href="#">Viral<span>.</span>Dev</a>
         </div>
         <ul className={styles.navLinks}>
           <li><a href="#about">About</a></li>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './Projects.module.css';
 import { projectsData } from '../../data';
@@ -25,8 +26,7 @@ const Projects = () => {
                     ))}
                   </div>
                   <div className={styles.projectLinks}>
-                    <a href={project.liveUrl} target="_blank" rel="noreferrer" className="btn btn-primary">Live Demo</a>
-                    <a href={project.caseStudyUrl} target="_blank" rel="noreferrer" className="btn btn-outline">Case Study</a>
+                    <Link to={`/case-study/${project.id}`} className="btn btn-outline">Case Study</Link>
                   </div>
                 </div>
               </div>
@@ -39,5 +39,6 @@ const Projects = () => {
     </section>
   );
 };
+
 
 export default Projects;
